@@ -3,10 +3,10 @@
 //common js module at server side
 const express = require("express");
 //import passport js
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
-//tell passport to use googleStategy
-passport.use(new GoogleStrategy());
+// const passport = require("passport");
+// const GoogleStrategy = require("passport-google-oauth20").Strategy;
+// //tell passport to use googleStategy
+// passport.use(new GoogleStrategy());
 //generate a new application
 const app = express();
 //router
