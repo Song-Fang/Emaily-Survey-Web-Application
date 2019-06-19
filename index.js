@@ -34,7 +34,10 @@ app.use(passport.session());
 authRouters(app);
 app.get('/',(req,res)=>{
   //error function
-  res.send({'hi':'new World'});
+  res.send({
+    'hi':'xiangqian',
+    'Reply':'Do you miss me?'
+});
 });
 
 //express telling node to listen on port 5000
