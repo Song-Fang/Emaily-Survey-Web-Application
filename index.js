@@ -41,6 +41,7 @@ app.get('/',(req,res)=>{
 });
 
 //express telling node to listen on port 5000
+//environment variables defined by heroku
 const PORT = process.env.PORT||5000
 app.listen(PORT);
 
