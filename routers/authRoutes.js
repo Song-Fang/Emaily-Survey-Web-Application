@@ -1,5 +1,8 @@
 const passport = require('passport');
 
+
+//it's like a filter
+//'google' specifies that passport will forward our request to Google Oauth20
 module.exports=app=>{
 
   app.get('/auth/google',passport.authenticate('google',{
@@ -13,12 +16,13 @@ module.exports=app=>{
   }
 );
 
-  app.get('api/current_user',(req,res)=>{
+  app.get('/api/current_user',(req,res)=>{
     res.send(req.user);
   });
 
-  app.get('api/logout',(req,res)=>{
+  app.get('/api/logout',(req,res)=>{
     req.logout();
+    res.send(req.user);
     res.redirect('/');
   })
 }

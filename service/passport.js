@@ -16,11 +16,14 @@ passport.deserializeUser((id,done)=>{
   });
 });
 
+//1037395709620-rim9trp69vc9v2jjv7siccc9sofgjn37.apps.googleusercontent.com
+//0kZUm_tHXIe4udpkvOMSQrJJ
 
 passport.use(new GoogleStrategy({
   clientID:keys.googleClientID,
   clientSecret:keys.googleClientSecret,
-  callbackURL:'/auth/google/callback'
+  callbackURL:'/auth/google/callback',
+  proxy:true
 },
 async (accessToken,refreshToken,profile,done)=>{
 
