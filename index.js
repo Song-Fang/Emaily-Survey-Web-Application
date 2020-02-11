@@ -43,13 +43,7 @@ app.use(passport.session());
 
 authRouters(app);
 billRouters(app);
-app.get('/',(req,res)=>{
-  //error function
-  res.send({
-    'hi':'xiangqian',
-    'Reply':'Do you miss me?'
-});
-});
+
 
 if(process.env.NODE_ENV==='prodution'){
 
