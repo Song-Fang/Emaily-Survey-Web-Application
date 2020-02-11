@@ -52,6 +52,7 @@ app.get('/',(req,res)=>{
 });
 
 if(process.env.NODE_ENV==='prodution'){
+
   app.use(express.static('client/build'));
 
   const path = require('path');
