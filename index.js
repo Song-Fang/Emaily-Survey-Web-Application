@@ -16,9 +16,11 @@ const bodyParser = require('body-parser');
 //generate a new application
 const app = express();
 require('./model/User');
+require('./model/Surveys');
 require('./service/passport.js');
 const authRouters = require('./routers/authRoutes.js');
 const billRouters = require('./routers/billRouters.js');
+const surveyRoutes = require('./routers/surveyRoutes.js');
 mongoose.connect(keys.mongoURI);
 //router
 //create a brand new router handler
@@ -43,6 +45,7 @@ app.use(passport.session());
 
 authRouters(app);
 billRouters(app);
+surveyRoutes(app);
 
 
 if(process.env.NODE_ENV==='prodution'){
@@ -50,9 +53,9 @@ if(process.env.NODE_ENV==='prodution'){
   app.use(express.static('client/build'));
 
   const path = require('path');
-  app.get('/',(req,res)=>{
+  app.get('*',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'client','build','index.html'));
-  })
+  });
 }
 
 //express telling node to listen on port 5000

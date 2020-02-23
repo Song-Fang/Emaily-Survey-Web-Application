@@ -4,5 +4,7 @@ module.exports={
   mongoURI:process.env.MONGO_URI,
   cookieKeys:process.env.COOKIE_KEYS,
   googleRedirectURL:'https://calm-waters-17077.herokuapp.com/',
-  stripeSecretKeys:process.env.STRIPE_SECRET_KEYS
+  stripeSecretKeys:process.env.STRIPE_SECRET_KEYS,
+  sendGridKeys:process.env.SEND_GRID_KEYS,
+  redirectDomain:process.env.REDIRECT_DOMAIN
 };
